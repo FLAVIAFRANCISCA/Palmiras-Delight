@@ -49,31 +49,28 @@ const galleryImages = [
   { src: 'images/cake1.jpg', label: 'Birthday Cake' },
   { src: 'images/cake2.jpg', label: 'Sweet 16' },
   { src: 'images/cake3.jpg', label: 'Welcome Baby Cake' },
-  { src: 'images/bentobox.jpg', label: 'Heart Cake & Cupcakes' },
-  { src: 'images/cupcake1.jpg', label: 'Blue Ombre Cake' },
-  { src: 'images/samosas1.jpg', label: 'Truffle Temptation' },
-  { src: 'images/cake4.jpg', label: 'Confetti Charm' },
-  { src: 'images/cake5.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake6.jpg', label: 'Confetti Charm' },
-  { src: 'images/bentobox2.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cupcake2.jpg', label: 'Confetti Charm' },
-  { src: 'images/samosas2.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake7.jpg', label: 'Confetti Charm' },
-  { src: 'images/cake8.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake9.jpg', label: 'Confetti Charm' },
-  { src: 'images/hero1.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cupcake3.jpg', label: 'Confetti Charm' },
-  { src: 'images/hero2.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake10.jpg', label: 'Confetti Charm' },
-  { src: 'images/cake11.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake12.jpg', label: 'Confetti Charm' },
-  { src: 'images/cake13.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake14.jpg', label: 'Confetti Charm' },
-  { src: 'images/cake15.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake16.jpg', label: 'Confetti Charm' },
-  { src: 'images/cake17.jpg', label: 'Berry Crepe Love' },
-  { src: 'images/cake18.jpg', label: 'Confetti Charm' },
-  { src: 'images/cake19.jpg', label: 'Berry Crepe Love' }
+  { src: 'images/bentobox.jpg', label: 'Heart Bento Box' },
+  { src: 'images/cupcake1.jpg', label: 'Cocomelo Cupcake' },
+  { src: 'images/samosas2.jpg', label: 'Samosas Platter (crackers and Chips Not Included)' },
+  { src: 'images/cake4.jpg', label: 'Crown Birthday Cake' },
+  { src: 'images/cake5.jpg', label: ' Bar One Birthday Cake' },
+  { src: 'images/cake6.jpg', label: 'Crown Gift Cake' },
+  { src: 'images/bentobox2.jpg', label: 'Bento Box Cake' },
+  { src: 'images/cupcake2.jpg', label: 'Green/White Cupcake' },
+  { src: 'images/cake7.jpg', label: ' Pink Lady Birthday Cake' },
+  { src: 'images/cake8.jpg', label: 'Rose Birthday Cake' },
+  { src: 'images/cake9.jpg', label: 'Royal Birthday Cake' },
+  { src: 'images/cupcake3.jpg', label: 'Red Velvet Cupcake' },
+  { src: 'images/cake10.jpg', label: 'Cocomelon Cake ' },
+  { src: 'images/cake11.jpg', label: 'Real Madrid Cake' },
+  { src: 'images/cake12.jpg', label: 'Cocomelo Cake' },
+  { src: 'images/cake13.jpg', label: 'Valentines Cake' },
+  { src: 'images/cake14.jpg', label: 'Unicorn Cake' },
+  { src: 'images/cake15.jpg', label: 'Batman Cake' },
+  { src: 'images/cake16.jpg', label: 'Baby Shower Cake' },
+  { src: 'images/cake17.jpg', label: 'Baby Shower Cake' },
+  { src: 'images/cake18.jpg', label: 'Rainbow Cake' },
+  { src: 'images/cake19.jpg', label: 'Spider Webs Cake' }
 ];
 
 galleryImages.forEach(imgObj => {
@@ -122,28 +119,67 @@ menuLinks.forEach(link => {
   });
 });
 
-const orderForm = document.querySelector('form');
 
-function closeThankYouModal() {
-  document.getElementById('thank-you-modal').style.display = 'none';
-}
+// === FORM SUBMISSION LOGIC ===
+const orderForm = document.getElementById('orderForm');
+const thankYouModal = document.getElementById('thank-you-modal');
+const deliveryPickupSelect = document.getElementById('delivery-pickup');
+const addressField = document.getElementById('address-field');
+const pickupAddress = document.getElementById('pickup-address');
+
+// Handle delivery/pickup field visibility
+deliveryPickupSelect.addEventListener('change', (e) => {
+  if (e.target.value === 'Delivery') {
+    addressField.style.display = 'block';
+    pickupAddress.style.display = 'none';
+  } else if (e.target.value === 'Pick Up') {
+    addressField.style.display = 'none';
+    pickupAddress.style.display = 'block';
+  } else {
+    addressField.style.display = 'none';
+    pickupAddress.style.display = 'none';
+  }
+});
 
 orderForm.addEventListener('submit', function(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent the default form submission
 
-  // Show the modal
-  document.getElementById('thank-you-modal').style.display = 'flex';
+  const formData = new FormData(orderForm);
+  const data = Object.fromEntries(formData.entries());
 
- // Fire confetti
-  confetti({
-    particleCount: 150,
-    spread: 70,
-    origin: { y: 0.6 }
+  fetch(orderForm.action, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      // Show the modal
+      thankYouModal.style.display = 'flex';
+
+      // Fire confetti
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+      
+      // Reset the form
+      orderForm.reset();
+    } else {
+      alert("Oops! There was a problem submitting your form. Please try again.");
+    }
+  }).catch(error => {
+    console.error('Error:', error);
+    alert("Oops! There was a problem submitting your form. Please try again.");
   });
-
-  // Reset the form
-  orderForm.reset();
 });
+
+function closeThankYouModal() {
+  thankYouModal.style.display = 'none';
+}
 
 // === RESTRICT DATE INPUT TO TODAY AND 1 YEAR AHEAD ===
 const orderDate = document.getElementById('order-date');
@@ -161,4 +197,3 @@ if (orderDate) {
   orderDate.min = minDate;
   orderDate.max = maxDate;
 }
-

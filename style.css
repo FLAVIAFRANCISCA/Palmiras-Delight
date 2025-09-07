@@ -23,9 +23,13 @@ a {
 
 /* HEADER */
 .header-image {
-  width: 100%;
+  width: 50%;
   height: auto;
   object-fit: cover;
+}
+
+header {
+  border: 5px solid #c2185b;
 }
 
 .header-overlay {
@@ -35,7 +39,7 @@ a {
 
 .hero-overlay-text {
   position: absolute;
-  top: 50%;
+  top: 70%; /* Adjusted from 50% to 70% to lower the button */
   left: 50%;
   transform: translate(-50%, -50%);
   color: #c2185b;
@@ -495,5 +499,3 @@ input[type="date"] {
   font-size: 2.5rem;
   color: #c2185b;
 }
-
-

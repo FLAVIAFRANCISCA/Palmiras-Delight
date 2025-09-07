@@ -9,22 +9,16 @@
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="top-bar">
   <div class="hamburger" id="hamburger">&#9776;</div>
   <span class="top-brand fuchsia-bold">Palmira's Bites & Delights</span>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="header-overlay">
-    <img src="images/banner c.jpg" alt="Palmira's Banner" class="header-image">
-    <div class="hero-overlay-text">
-      <h1>Where sweet meets savory</h1>
-      <p>Crafted with love, served with flair</p>
-      <a href="#order" class="btn-pink">Order Now</a>
-    </div>
+    <img src="images/Banner.png" alt="Palmira's Banner" class="header-image">
   </div>
+  <a href="#order" class="btn-pink hero-overlay-text">Order Now</a>
 
   <nav class="dropdown-menu" id="dropdownMenu">
     <a href="#delicacies" class="fuchsia-bold">Delicacies</a>
@@ -36,7 +30,6 @@
   </nav>
 </header>
 
-<!-- DELICACIES -->
 <section id="delicacies">
   <h2 class="section-heading">Delicacies</h2>
   <div class="grid-container">
@@ -62,7 +55,7 @@
       </div>
     </div>
 
-    <div class="card" data-type="cupcakes" data-products="Strawberry - R120, Mocha - R200, Caramel - R250">
+    <div class="card" data-type="cupcakes" data-products="Half a Dozen - R70, A Dozen - R120, *Note that prices may vary based on design and flavor">
       <div class="slideshow">
         <img src="images/cupcake1.jpg" alt="cocomelo cupcake">
         <img src="images/cupcake2.jpg" alt="green-white cupcake">
@@ -72,7 +65,6 @@
   </div>
 </section>
 
-<!-- PRODUCT MODAL -->
 <div class="modal" id="product-modal">
   <div class="modal-content">
     <button class="modal-close" onclick="closeProductModal()">✖</button>
@@ -81,15 +73,12 @@
   </div>
 </div>
 
-<!-- GALLERY -->
 <section id="gallery">
   <h2 class="section-heading">Gallery</h2>
   <div class="insta-gallery">
-    <!-- Dynamic images inserted via JS -->
-  </div>
+    </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <h2 class="section-heading">About Us</h2>
   <p>
@@ -97,31 +86,38 @@
   </p>
 </section>
 
-<!-- PLACE YOUR ORDER -->
-<section id="order">
+<section id="order"> 
   <h2 class="section-heading">Place Your Order</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="tel" placeholder="Phone Number" required>
+  <form id="orderForm" action="https://formspree.io/f/mblaqkwl" method="POST">
+    <input type="text" placeholder="Your Name" name="name" required>
+    <input type="tel" placeholder="WhatsApp Number" name="whatsapp_number" required>
     
     <label>When is the order for?</label>
-    <input type="date" id="order-date" required>
+    <input type="date" id="order-date" name="order_date" required>
 
-    <select required>
+    <select id="delivery-pickup" name="delivery_pickup" required>
       <option value="" disabled selected>Delivery or Pick Up</option>
       <option value="Delivery">Delivery</option>
       <option value="Pick Up">Pick Up</option>
     </select>
 
+    <div id="address-field" style="display: none;">
+      <input type="text" placeholder="Delivery Address" name="delivery_address">
+    </div>
+
+    <div id="pickup-address" style="display: none;">
+      <p>Pick up address: 198 Main StRosettenville, Johannesburg, 2190</p>
+    </div>
+
     <label>Select Order Type(s)</label>
     <div class="checkbox-group">
       <label><input type="checkbox" name="order-type" value="Cake"> Cake</label>
-      <label><input type="checkbox" name="order-type" value="Biscuit Delights"> Biscuit Delights</label>
+      <label><input type="checkbox" name="order-type" value="Bento-Box"> Bento-Box</label>
       <label><input type="checkbox" name="order-type" value="Savory Bites"> Savory Bites</label>
       <label><input type="checkbox" name="order-type" value="Cupcakes"> Cupcakes</label>
     </div>
 
-    <textarea rows="10" placeholder="Describe your order" required></textarea>
+    <textarea rows="10" placeholder="Describe your order" name="order_description" required></textarea>
     <button type="submit" class="btn-pink">Submit</button>
   </form>
 </section>
@@ -135,7 +131,6 @@
 </div>
 
 
-<!-- TESTIMONIALS -->
 <section id="testimonials">
   <h2 class="section-heading">What Our Clients Say</h2>
   <div class="testimonials-grid">
@@ -156,16 +151,14 @@
     </div>
   </div>
 </section>
-
-<!-- CONTACT SECTION -->
+    
 <section id="contact">
   <h2 class="section-heading">Contact</h2>
-  <p>WhatsApp: <a href="https://wa.me/27811234567" target="_blank">+27 73 245 8066</a></p>
-  <p>Email: <a href="mailto:orderspalmirasdelights@gmail.com">orderspalmirasdelights@gmail.com</a></p>
-  <p>Phone: <a href="tel:+27811234567">+27 73 245 8066</a></p>
+  <p>WhatsApp: <a href="https://wa.me/27732458066" target="_blank">+27 73 245 8066</a></p>
+  <p>Email: orderspalmirasdelights@gmail.com</p>
+  <p>Phone: +27 73 245 8066</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>&copy; 2025 Palmira's Bites & Delights. All rights reserved.</p>
 </footer>
