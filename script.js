@@ -63,7 +63,7 @@ const galleryImages = [
   { src: 'images/cupcake3.jpg', label: 'Red Velvet Cupcake' },
   { src: 'images/cake10.jpg', label: 'Cocomelon Cake ' },
   { src: 'images/cake11.jpg', label: 'Real Madrid Cake' },
-  { src: 'images/cake12.jpg', label: 'Cocomelo Cake' },
+  { src: 'images/cake12.jpg', label: 'Cocomelon Cake' },
   { src: 'images/cake13.jpg', label: 'Valentines Cake' },
   { src: 'images/cake14.jpg', label: 'Unicorn Cake' },
   { src: 'images/cake15.jpg', label: 'Batman Cake' },
