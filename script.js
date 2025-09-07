@@ -70,7 +70,9 @@ const galleryImages = [
   { src: 'images/cake16.jpg', label: 'Baby Shower Cake' },
   { src: 'images/cake17.jpg', label: 'Baby Shower Cake' },
   { src: 'images/cake18.jpg', label: 'Rainbow Cake' },
-  { src: 'images/cake19.jpg', label: 'Spider Webs Cake' }
+  { src: 'images/cake19.jpg', label: 'Spider Webs Cake' },
+  { src: 'images/cake20.jpg', label: 'Fruit Deco Cake' }
+  
 ];
 
 galleryImages.forEach(imgObj => {
