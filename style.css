@@ -39,7 +39,7 @@ header {
 
 .hero-overlay-text {
   position: absolute;
-  top: 70%; /* Adjusted from 50% to 70% to lower the button */
+  top: 50%; /* Adjusted from 50% to 70% to lower the button */
   left: 50%;
   transform: translate(-50%, -50%);
   color: #c2185b;
