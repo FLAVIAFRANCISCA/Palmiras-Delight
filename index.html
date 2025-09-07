@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palmira's Bites & Delights</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="hamburger" id="hamburger">&#9776;</div>
+  <span class="top-brand fuchsia-bold">Palmira's Bites & Delights</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-overlay">
+    <img src="images/banner c.jpg" alt="Palmira's Banner" class="header-image">
+    <div class="hero-overlay-text">
+      <h1>Where sweet meets savory</h1>
+      <p>Crafted with love, served with flair</p>
+      <a href="#order" class="btn-pink">Order Now</a>
+    </div>
+  </div>
+
+  <nav class="dropdown-menu" id="dropdownMenu">
+    <a href="#delicacies" class="fuchsia-bold">Delicacies</a>
+    <a href="#gallery" class="fuchsia-bold">Gallery</a>
+    <a href="#about" class="fuchsia-bold">About Us</a>
+    <a href="#testimonials" class="fuchsia-bold">What Our Clients Say</a>
+    <a href="#order" class="fuchsia-bold">Place Your Order</a>
+    <a href="#contact" class="fuchsia-bold">Contact</a>
+  </nav>
+</header>
+
+<!-- DELICACIES -->
+<section id="delicacies">
+  <h2 class="section-heading">Delicacies</h2>
+  <div class="grid-container">
+    <div class="card" data-type="cakes" data-products="Chocolate Cake - R250, Vanilla Cake - R300, Red Velvet - R500">
+      <div class="slideshow">
+        <img src="images/cake15.jpg" alt="batman cake">
+        <img src="images/cake17.jpg" alt="baby shower cake">
+        <div class="card-title">Cakes</div>
+      </div>
+    </div>
+
+    <div class="card" data-type="bento-boxes" data-products="Shortbread - R100, Coconut - R200, Ginger - R300">
+      <div class="slideshow">
+        <img src="images/bentobox.jpg" alt="heart-bento-box">
+        <div class="card-title">Bento Boxes</div>
+      </div>
+    </div>
+
+    <div class="card" data-type="savory" data-products="Pies - R150, Quiches - R250, Rolls - R350">
+      <div class="slideshow">
+        <img src="images/samosas2.jpg" alt="samosas">
+        <div class="card-title">Savory Bites</div>
+      </div>
+    </div>
+
+    <div class="card" data-type="cupcakes" data-products="Strawberry - R120, Mocha - R200, Caramel - R250">
+      <div class="slideshow">
+        <img src="images/cupcake1.jpg" alt="cocomelo cupcake">
+        <img src="images/cupcake2.jpg" alt="green-white cupcake">
+        <div class="card-title">Cupcakes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="product-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeProductModal()">✖</button>
+    <h2 id="modal-title">Product List</h2>
+    <ul id="modal-content-list"></ul>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2 class="section-heading">Gallery</h2>
+  <div class="insta-gallery">
+    <!-- Dynamic images inserted via JS -->
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-heading">About Us</h2>
+  <p>
+    Welcome to Palmira’s Bites & Delights – a haven of handcrafted treats, all lovingly made.
+    Proudly South African, we blend tradition and flair into every bite. From buttery biscuits to decadent cakes,
+    we bake with heart and happiness, creating memorable moments.
+  </p>
+</section>
+
+<!-- PLACE YOUR ORDER -->
+<section id="order">
+  <h2 class="section-heading">Place Your Order</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+    
+    <label>When is the order for?</label>
+    <input type="date" id="order-date" required>
+
+    <select required>
+      <option value="" disabled selected>Delivery or Pick Up</option>
+      <option value="Delivery">Delivery</option>
+      <option value="Pick Up">Pick Up</option>
+    </select>
+
+    <label>Select Order Type(s)</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="order-type" value="Cake"> Cake</label>
+      <label><input type="checkbox" name="order-type" value="Biscuit Delights"> Biscuit Delights</label>
+      <label><input type="checkbox" name="order-type" value="Savory Bites"> Savory Bites</label>
+      <label><input type="checkbox" name="order-type" value="Cupcakes"> Cupcakes</label>
+    </div>
+
+    <textarea rows="10" placeholder="Describe your order" required></textarea>
+    <button type="submit" class="btn-pink">Submit</button>
+  </form>
+</section>
+
+<div id="thank-you-modal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeThankYouModal()">×</button>
+    <h2>Thank You!</h2>
+    <h2>We’ll get back to you shortly.</h2>
+  </div>
+</div>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <h2 class="section-heading">What Our Clients Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <img src="images/ombre blue.jpg" alt="Zanele">
+      <p>"Absolutely divine cupcakes, made my birthday unforgettable!"</p>
+      <span>- Zanele M.</span>
+    </div>
+    <div class="testimonial-card">
+      <img src="images/chocolate truffel.jpg" alt="Thabo">
+      <p>"Professional service and the best shortbread I've ever had!"</p>
+      <span>- Thabo K.</span>
+    </div>
+    <div class="testimonial-card">
+      <img src="images/parlines.jpg" alt="Ayesha">
+      <p>"Palmira brings the flavor of home and love in every bite."</p>
+      <span>- Ayesha R.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <h2 class="section-heading">Contact</h2>
+  <p>WhatsApp: <a href="https://wa.me/27811234567" target="_blank">+27 81 123 4567</a></p>
+  <p>Email: <a href="mailto:orders@palmirasdelights.co.za">orders@palmirasdelights.co.za</a></p>
+  <p>Phone: <a href="tel:+27811234567">+27 81 123 4567</a></p>
+  <p>Address: <a href="https://www.google.com/maps/place/123+Sweet+Street,+Cape+Town,+South+Africa" target="_blank">123 Sweet Street, Cape Town, South Africa</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Palmira's Bites & Delights. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
