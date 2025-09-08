@@ -144,7 +144,7 @@ deliveryPickupSelect.addEventListener('change', (e) => {
 });
 
 orderForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); 
 
   const formData = new FormData(orderForm);
   const data = Object.fromEntries(formData.entries());
@@ -192,7 +192,7 @@ if (orderDate) {
   const dd = String(today.getDate()).padStart(2, '0');
   const minDate = `${yyyy}-${mm}-${dd}`;
 
-  const oneYearLater = new Date(today.getTime()); // clone today
+  const oneYearLater = new Date(today.getTime()); 
   oneYearLater.setFullYear(oneYearLater.getFullYear() + 1);
   const maxDate = oneYearLater.toISOString().split('T')[0];
 
