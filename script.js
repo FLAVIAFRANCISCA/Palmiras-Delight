@@ -46,7 +46,7 @@ function closeProductModal() {
 const gallery = document.querySelector('.insta-gallery');
 
 const galleryImages = [
-  { src: 'images/cake1.jpg', label: 'Birthday Cake' },
+  { src: 'images/cake1.png', label: 'Birthday Cake' },
   { src: 'images/cake2.jpg', label: 'Sweet 16' },
   { src: 'images/cake3.jpg', label: 'Welcome Baby Cake' },
   { src: 'images/bentobox.jpg', label: 'Heart Bento Box' },
@@ -129,7 +129,6 @@ const deliveryPickupSelect = document.getElementById('delivery-pickup');
 const addressField = document.getElementById('address-field');
 const pickupAddress = document.getElementById('pickup-address');
 
-
 // Handle delivery/pickup field visibility
 deliveryPickupSelect.addEventListener('change', (e) => {
   if (e.target.value === 'Delivery') {
@@ -144,10 +143,9 @@ deliveryPickupSelect.addEventListener('change', (e) => {
   }
 });
 
-
 orderForm.addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  
+  event.preventDefault(); // Prevent the default form submission
+
   const formData = new FormData(orderForm);
   const data = Object.fromEntries(formData.entries());
 
@@ -194,7 +192,7 @@ if (orderDate) {
   const dd = String(today.getDate()).padStart(2, '0');
   const minDate = `${yyyy}-${mm}-${dd}`;
 
-  const oneYearLater = new Date(today.getTime()); 
+  const oneYearLater = new Date(today.getTime()); // clone today
   oneYearLater.setFullYear(oneYearLater.getFullYear() + 1);
   const maxDate = oneYearLater.toISOString().split('T')[0];
 
