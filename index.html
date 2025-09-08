@@ -25,105 +25,125 @@
     <a href="#gallery" class="fuchsia-bold">Gallery</a>
     <a href="#about" class="fuchsia-bold">About Us</a>
     <a href="#testimonials" class="fuchsia-bold">What Our Clients Say</a>
-    <a href="#order" class="fuchsia-bold">Place Your Order</a>
+    <a href="#order" class="fuchsia-bold">Order Now</a>
     <a href="#contact" class="fuchsia-bold">Contact</a>
   </nav>
 </header>
 
-<section id="delicacies">
-  <h2 class="section-heading">Delicacies</h2>
-  <div class="grid-container">
-    <div class="card" data-type="cakes" data-products="Heart Cake- R450, Small Cake - R400 - R550 , Large Cake - R600 - R1200">
-      <div class="slideshow">
-        <img src="images/cake15.jpg" alt="batman cake">
-        <img src="images/cake17.jpg" alt="baby shower cake">
-        <div class="card-title">Cakes</div>
+<main>
+  <section id="delicacies">
+    <h2 class="section-heading">Our Delicacies</h2>
+    <div class="delicacies-grid">
+      <div class="card" data-type="cake" data-products="Birthday cakes, Wedding cakes, Anniversary cakes, Baby shower cakes, Graduation cakes">
+        <div class="card-image-container">
+          <img src="images/cake1.jpg" alt="Cake">
+          <img src="images/cake15.jpg" alt="Cake">
+        </div>
+        <div class="card-content">
+          <h3>Cakes</h3>
+        </div>
+      </div>
+      <div class="card" data-type="cupcake" data-products="Red Velvet, Vanilla, Chocolate, Lemon">
+        <div class="card-image-container">
+          <img src="images/cupcake1.jpg" alt="Cupcake">
+          <img src="images/cupcake2.jpg" alt="Cupcake">
+        </div>
+        <div class="card-content">
+          <h3>Cupcakes</h3>
+        </div>
+      </div>
+      <div class="card" data-type="savory bite" data-products="Samosas (Vegetable, Mince), Spring Rolls (Vegetable, Chicken), Halfmoons">
+        <div class="card-image-container">
+          <img src="images/samosas1.jpg" alt="Samosas">
+          <img src="images/samosas2.jpg" alt="Samosas">
+        </div>
+        <div class="card-content">
+          <h3>Savory Bites</h3>
+        </div>
+      </div>
+      <div class="card" data-type="Bento Box" data-products="Heart shaped bento boxes, Mini birthday bento boxes, Personalised bento boxes">
+        <div class="card-image-container">
+          <img src="images/bentobox.jpg" alt="Bento Box">
+          <img src="images/bentobox2.jpg" alt="Bento Box">
+        </div>
+        <div class="card-content">
+          <h3>Bento Boxes</h3>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="card" data-type="bento-boxes" data-products="Bento Box (Heart Cake and 9 Cupcakes) - R450 - R500, Bento Box (Round Cake and 9 Cupcakes) - R450 - R500">
-      <div class="slideshow">
-        <img src="images/bentobox.jpg" alt="heart-bento-box">
-        <img src="images/bentobox2.jpg" alt="round-bento-box"> 
-        <div class="card-title">Bento Boxes</div>
-      </div>
-    </div>
-
-    <div class="card" data-type="savory" data-products=" A Dozen - R75, 2 Dozen - R140, A Dozen Rissois - R95, *Note that prices may vary based on filling, A Dozen cheesebites - R95">
-      <div class="slideshow">
-        <img src="images/samosas2.jpg" alt="samosas">
-        <img src="images/cheesebites.png" alt="cheesebites">
-        <img src="images/rissois.jpeg" alt="rissois">
-        <div class="card-title">Savory Bites</div>
-      </div>
-    </div>
-
-    <div class="card" data-type="cupcakes" data-products="Half a Dozen - R70, A Dozen - R120, *Note that prices may vary based on design and flavor">
-      <div class="slideshow">
-        <img src="images/cupcake1.jpg" alt="cocomelo cupcake">
-        <img src="images/cupcake2.jpg" alt="green-white cupcake">
-        <div class="card-title">Cupcakes</div>
-      </div>
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProductModal()">×</button>
+      <h2 id="modal-title"></h2>
+      <ul id="modal-content-list"></ul>
     </div>
   </div>
-</section>
-
-<div class="modal" id="product-modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeProductModal()">✖</button>
-    <h2 id="modal-title">Product List</h2>
-    <ul id="modal-content-list"></ul>
-  </div>
-</div>
 
 <section id="gallery">
   <h2 class="section-heading">Gallery</h2>
   <div class="insta-gallery">
-    </div>
+  </div>
 </section>
 
 <section id="about">
   <h2 class="section-heading">About Us</h2>
-  <p>
-    Welcome to Palmira's Delights, your go to destination for custom made sweet and savory treats! We specialize in creating stunning custom cakes and delectable cupcakes for every occasion, from birthdays to weddings. But that's not all—we also offer our famous, freshly made samosas, the perfect savory bite to complement our delicious baked goods. At Palmira's Delights, we turn your ideas into edible art, ensuring every bite is a moment of pure joy.
-  </p>
+  <div class="about-container">
+    <img src="images/Pam.jpeg" alt="Pam" class="profile-image">
+    <div class="about-content">
+      <p>
+        Welcome to Palmira's Bites & Delights, a proudly South African confectionery specializing in custom cakes, cupcakes, and savory bites. It all started in my home kitchen in 2021, where my love for baking and bringing joy to people's lives came together to create delicious and beautiful treats. 
+      </p>
+      <p>
+        My journey began with a simple desire to share the taste of home and happiness with my community. Every cake is a canvas for creativity, and every savory bite is a taste of love. Whether it's a birthday, wedding, or just a special moment, I pour my heart into every single order to ensure it's nothing short of perfect.
+      </p>
+      <p>
+        I'm honored to be a part of your celebrations and look forward to creating something special for you. Thank you for supporting my small business and for letting me share my passion with you.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section id="order"> 
-  <h2 class="section-heading">Place Your Order</h2>
-  <form id="orderForm" action="https://formspree.io/f/mblaqkwl" method="POST" enctype="multipart/form-data">
-    <input type="text" placeholder="Your Name" name="name" required>
-    <input type="tel" placeholder="WhatsApp Number" name="whatsapp_number" required>
-    
-    <label>When is the order for?</label>
-    <input type="date" id="order-date" name="order_date" required>
-
-    <select id="delivery-pickup" name="delivery_pickup" required>
-      <option value="" disabled selected>Delivery or Pick Up</option>
-      <option value="Delivery">Delivery</option>
-      <option value="Pick Up">Pick Up</option>
-    </select>
-
-    <div id="address-field" style="display: none;">
-      <input type="text" placeholder="Delivery Address" name="delivery_address">
+<section id="order">
+  <h2 class="section-heading">Custom Order Form</h2>
+  <p class="order-intro">Ready to order your custom treat? Fill out the form below with your details and specific requests. We'll get back to you shortly with a quote and to confirm your order.</p>
+  <form id="orderForm" action="https://formspree.io/f/mqkrvknd" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="Name" required>
     </div>
-
-    <div id="pickup-address" style="display: none;">
-      <p>Pick up address: 198 Main StRosettenville, Johannesburg, 2190</p>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="Phone Number" required>
     </div>
-
-    <label>Select Order Type(s)</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" name="order-type" value="Cake"> Cake</label>
-      <label><input type="checkbox" name="order-type" value="Bento-Box"> Bento-Box</label>
-      <label><input type="checkbox" name="order-type" value="Savory Bites"> Savory Bites</label>
-      <label><input type="checkbox" name="order-type" value="Cupcakes"> Cupcakes</label>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email" required>
     </div>
-    
-    <label for="order-images">Upload reference images (up to 5):</label>
-    <input type="file" id="order-images" name="order_images[]" accept="image/*" multiple>
-
-    <textarea rows="10" placeholder="Describe your order" name="order_description" required></textarea>
+    <div class="form-group">
+      <label for="order-date">Date Needed</label>
+      <input type="date" id="order-date" name="Date Needed" required>
+    </div>
+    <div class="form-group">
+      <label for="delivery-pickup">Delivery or Pick Up</label>
+      <select id="delivery-pickup" name="Delivery or Pick Up" required>
+        <option value="">--Please choose an option--</option>
+        <option value="Delivery">Delivery</option>
+        <option value="Pick Up">Pick Up</option>
+      </select>
+    </div>
+    <div class="form-group" id="address-field" style="display: none;">
+      <label for="address">Delivery Address</label>
+      <input type="text" id="address" name="Delivery Address">
+    </div>
+    <div class="form-group" id="pickup-address" style="display: none;">
+      <p><strong>Pick up address:</strong> 123 Cake Lane, Sweetville, 1234</p>
+    </div>
+    <div class="form-group">
+      <label for="order-description">Order Description</label>
+      <textarea id="order-description" name="Order Description" required></textarea>
+    </div>
     <button type="submit" class="btn-pink">Submit</button>
   </form>
 </section>
@@ -152,7 +172,7 @@
     </div>
     <div class="testimonial-card">
       <img src="images/cake15.jpg" alt="Benjamin">
-      <p>"Pam brings the flavor of home and love in every bite."</p>
+      <p>\"Pam brings the flavor of home and love in every bite.\"</p>
       <span>- Benjamin</span>
     </div>
   </div>
@@ -160,13 +180,18 @@
     
 <section id="contact">
   <h2 class="section-heading">Contact</h2>
-  <p>WhatsApp: <a href="https://wa.me/27732458066" target="_blank">+27 73 245 8066</a></p>
-  <p>Email: orderspalmirasdelights@gmail.com</p>
-  <p>Phone: +27 73 245 8066</p>
+  <p class="contact-text">
+    If you have any questions or would like to discuss your order, feel free to contact us.
+  </p>
+  <div class="contact-details">
+    <p>Email: <a href="mailto:info@palmirasdelights.com">info@palmirasdelights.com</a></p>
+    <p>Phone: <a href="tel:+27123456789">+27 12 345 6789</a></p>
+    <a href="https://wa.me/27123456789" class="btn-whatsapp">WhatsApp Us</a>
+  </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Palmira's Bites & Delights. All rights reserved.</p>
+  <p>&copy; 2024 Palmira's Bites & Delights. All Rights Reserved.</p>
 </footer>
 
 <script src="script.js"></script>

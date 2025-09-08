@@ -46,7 +46,7 @@ function closeProductModal() {
 const gallery = document.querySelector('.insta-gallery');
 
 const galleryImages = [
-  { src: 'images/cake1.png', label: 'Birthday Cake' },
+  { src: 'images/cake1.jpg', label: 'Birthday Cake' },
   { src: 'images/cake2.jpg', label: 'Sweet 16' },
   { src: 'images/cake3.jpg', label: 'Welcome Baby Cake' },
   { src: 'images/bentobox.jpg', label: 'Heart Bento Box' },
@@ -128,7 +128,7 @@ const thankYouModal = document.getElementById('thank-you-modal');
 const deliveryPickupSelect = document.getElementById('delivery-pickup');
 const addressField = document.getElementById('address-field');
 const pickupAddress = document.getElementById('pickup-address');
-const orderImages = document.getElementById('order-images');
+
 
 // Handle delivery/pickup field visibility
 deliveryPickupSelect.addEventListener('change', (e) => {
@@ -144,25 +144,19 @@ deliveryPickupSelect.addEventListener('change', (e) => {
   }
 });
 
-// Handle image upload restriction
-orderImages.addEventListener('change', (e) => {
-  if (e.target.files.length > 5) {
-    alert("You can only upload a maximum of 5 images.");
-    e.target.value = '';
-  }
-});
 
 orderForm.addEventListener('submit', function(event) {
   event.preventDefault(); 
   
   const formData = new FormData(orderForm);
+  const data = Object.fromEntries(formData.entries());
 
   fetch(orderForm.action, {
     method: 'POST',
-    body: formData, // Send the FormData object directly
+    body: JSON.stringify(data),
     headers: {
+      'Content-Type': 'application/json',
       'Accept': 'application/json'
-      // Do NOT set Content-Type header; let the browser handle it for multipart/form-data
     }
   }).then(response => {
     if (response.ok) {
@@ -186,6 +180,10 @@ orderForm.addEventListener('submit', function(event) {
     alert("Oops! There was a problem submitting your form. Please try again.");
   });
 });
+
+function closeThankYouModal() {
+  thankYouModal.style.display = 'none';
+}
 
 // === RESTRICT DATE INPUT TO TODAY AND 1 YEAR AHEAD ===
 const orderDate = document.getElementById('order-date');
