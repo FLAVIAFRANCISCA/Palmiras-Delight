@@ -148,7 +148,7 @@ deliveryPickupSelect.addEventListener('change', (e) => {
 orderImages.addEventListener('change', (e) => {
   if (e.target.files.length > 5) {
     alert("You can only upload a maximum of 5 images.");
-    e.target.value = ''; // Clear the file input
+    e.target.value = '';
   }
 });
 
@@ -186,10 +186,6 @@ orderForm.addEventListener('submit', function(event) {
     alert("Oops! There was a problem submitting your form. Please try again.");
   });
 });
-
-function closeThankYouModal() {
-  thankYouModal.style.display = 'none';
-}
 
 // === RESTRICT DATE INPUT TO TODAY AND 1 YEAR AHEAD ===
 const orderDate = document.getElementById('order-date');
