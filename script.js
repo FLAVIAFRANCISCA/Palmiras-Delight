@@ -159,9 +159,10 @@ orderForm.addEventListener('submit', function(event) {
 
   fetch(orderForm.action, {
     method: 'POST',
-    body: formData,
+    body: formData, // Send the FormData object directly
     headers: {
       'Accept': 'application/json'
+      // Do NOT set Content-Type header; let the browser handle it for multipart/form-data
     }
   }).then(response => {
     if (response.ok) {
