@@ -91,7 +91,7 @@
 
 <section id="order"> 
   <h2 class="section-heading">Place Your Order</h2>
-  <form id="orderForm" action="https://formspree.io/f/mblaqkwl" method="POST">
+  <form id="orderForm" action="https://formspree.io/f/mblaqkwl" method="POST" enctype="multipart/form-data">
     <input type="text" placeholder="Your Name" name="name" required>
     <input type="tel" placeholder="WhatsApp Number" name="whatsapp_number" required>
     
@@ -119,6 +119,9 @@
       <label><input type="checkbox" name="order-type" value="Savory Bites"> Savory Bites</label>
       <label><input type="checkbox" name="order-type" value="Cupcakes"> Cupcakes</label>
     </div>
+    
+    <label for="order-images">Upload reference images (up to 5):</label>
+    <input type="file" id="order-images" name="order_images[]" accept="image/*" multiple>
 
     <textarea rows="10" placeholder="Describe your order" name="order_description" required></textarea>
     <button type="submit" class="btn-pink">Submit</button>
@@ -149,7 +152,7 @@
     </div>
     <div class="testimonial-card">
       <img src="images/cake15.jpg" alt="Benjamin">
-      <p>"Palmira brings the flavor of home and love in every bite."</p>
+      <p>"Pam brings the flavor of home and love in every bite."</p>
       <span>- Benjamin</span>
     </div>
   </div>

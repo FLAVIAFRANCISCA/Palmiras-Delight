@@ -10,7 +10,7 @@ Dynamic Gallery: A gallery section that displays a variety of high-quality image
 
 Modal Pop-ups: Interactive modals to display product menus and larger gallery images for a detailed view.
 
-Online Order Form: A user-friendly form for placing custom orders with specific details, including a dynamic date picker and a thank you confirmation.
+Online Order Form: A user-friendly form for placing custom orders with specific details, including a dynamic date picker and a thank you confirmation with a confetti animation.
 
 Testimonials Section: A dedicated section to showcase positive feedback from valued customers.
 

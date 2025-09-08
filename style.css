@@ -17,7 +17,7 @@ a {
 
 .fuchsia-bold {
   font-size: 1.6rem;
-  color: fuchsia;
+  color: #c2185b;
   font-weight: bold;
 }
 
@@ -30,6 +30,7 @@ a {
 
 header {
   border: 5px solid #c2185b;
+  border-radius: 15px;
 }
 
 .header-overlay {
@@ -364,7 +365,7 @@ footer {
 }
 
 .top-brand {
-  color: #d63384;
+  color: #c2185b;
   font-weight: bold;
 }
 
@@ -390,7 +391,7 @@ footer {
 
 .dropdown-menu a {
   padding: 0.5rem;
-  color: #fc46aa;
+  color: #c2185b;
   font-weight: bold;
 }
 
@@ -413,7 +414,7 @@ header {
   gap: 0.5rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: fuchsia;
+  color: #c2185b;
 }
 
 .checkbox-group input[type="checkbox"] {
